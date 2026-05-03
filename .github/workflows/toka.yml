@@ -1,4 +1,4 @@
-name: Toka
+name: the workflow
 on:
     workflow_dispatch
 jobs:
