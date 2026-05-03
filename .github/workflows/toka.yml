@@ -1,20 +1,21 @@
-name: the workflow
+name: the workflow fix test
 on:
-    workflow_dispatch
-jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: get code 
-              uses: actions/checkout@v3
-              
-            - name: set node
-              uses: actions/setup-node@v4
-              with:
-                node-version: 14
+  workflow_dispatch:
 
-            - name: install dependencies 
-              run: npm install 
-            
-            - name: run tests
-              run: npm test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code 
+        uses: actions/checkout@v4 # Updated to v4 for better compatibility
+
+      - name: set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14' # Quotes ensure it's treated as a string
+
+      - name: install dependencies 
+        run: npm install 
+      
+      - name: run tests
+        run: npm test
